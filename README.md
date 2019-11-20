@@ -19,3 +19,15 @@ Please replace \<csid\> with you utcs id.
 
 ### Mac
 This is the same as Linux for SSH.
+
+## Setting up git
+On a lab machine, there is no need to do that!!!! YAY.
+
+## Using git
+Git is a version control system.
+GitHub is an online place to store repositories, which fosters a community of people (That Microsoft might destroy, stay tuned.)
+``` bash
+  git clone https://github.com/AdityaAtulTewari/CS429HPrep.git
+  cd CS429HPrep
+```
+You have now cloned the directory and should be inside it.
