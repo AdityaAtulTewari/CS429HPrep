@@ -31,3 +31,6 @@ GitHub is an online place to store repositories, which fosters a community of pe
   cd CS429HPrep
 ```
 You have now cloned the directory and should be inside it.
+
+## Debuggers
+Time for slides...
