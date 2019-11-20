@@ -14,7 +14,7 @@ Please replace \<csid\> with you utcs id.
 ``` bash
   ssh-keygen -t rsa -f ~/.ssh/utlab
   data=`cat ~/.ssh/utlab.pub` && ssh <csid>@linux.cs.utexas.edu " echo $data >> ~/.ssh/authorized_keys"
-  ssh -i ~/.ssh/utlab <csid>@linux.css.utexas.edu
+  ssh -i ~/.ssh/utlab <csid>@linux.cs.utexas.edu
 ```
 
 ### Mac
