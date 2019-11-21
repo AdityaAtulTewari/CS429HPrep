@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main()
 {
-  printf("10!:%d\n", factorial(5));
+  printf("10!:%d\n", factorial(10));
 }
 
 int factorial(int x)
