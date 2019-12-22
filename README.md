@@ -32,5 +32,42 @@ GitHub is an online place to store repositories, which fosters a community of pe
 ```
 You have now cloned the directory and should be inside it.
 
-## Debuggers
-Time for slides...
+## Setting ourselves us to repeat login
+Learning how to write your own scripts will make you a much better programmer.
+It will also help you get familiar with bash.
+
+First let us create a directory for our scripts
+In your terminal (if on windows in WSL):
+``` bash
+  mkdir -p ~/scripts
+  echo 'export PATH="\$PATH:$HOME/scripts"' >> ~/.bash_profile
+```
+Whenever you open a new terminal the bash profile is run in order to set up your terminal environment.
+So it will now add the scripts directory to our PATH, which will allow us to execute those files.
+
+Make sure to replace \<csid\> with your csid.
+``` bash
+  echo "#!/bin/bash" > ~/scripts/sshut
+  echo "ssh -i ~/.ssh/utlab <csid>@linux.cs.utexas.edu" >> ~/scripts/sshut
+  chmod u+x ~/scripts/sshut
+  source ~/.bash_profile
+```
+
+chmod is a command that allows us to change the execution priveleges of the file, so we can execute the new script we have created.
+source is similar to relaoding the terminal, for the particular file specified.
+
+Now just use
+``` bash
+  sshut
+```
+To always be able to reliably login from anywhere on this same machine.
+
+## Text Editors
+Eventually you will want to edit text on the lab machine.
+My personal preference is vim.
+On a lab machine we can use vimtutor in order to learn this.
+To start the tutor just type.
+
+``` bash
+  vimtutor
+```
