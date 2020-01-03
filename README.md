@@ -71,3 +71,38 @@ To start the tutor just type.
 ``` bash
   vimtutor
 ```
+
+## Knowledge up to Google
+In the Information age it is sufficient to know something up to Google Searching (or knowing the right reference) the exact thing we are looking for.
+So suddenly knowing what the type of thing we want to do is called is far more important than knowing exactly how to do that thing itself.
+Thus definitions become far more important than methods.
+This might seem rather obvious, but all of the best Researchers and Software Engineers use Google to efficiently find what they need.
+Being able to do that is an invaluable skill that comes through practice.
+But often times you will not want to have to look everything up.
+So we also want to know things we use every day, so we learn that but just doing it (this is called knowledge by usage).
+
+## Version Control Systems
+Version control systems are used in order to ensure we can capture the state of our code and rollback to it.
+They have thousands of other features, but this is the main goal.
+They are a useful tool that any person who wants a CS degree should have a mastery up to Google.
+
+### Patches
+Version control systems keep track of patches in a tree structure in order to have a full history of whatever files you would like.
+In this context we view files as a series of patches that are applied one after another to reveal the content of a file.
+We can view an individual patch to a file as the insertions and deletions to that file.
+Then a patch to the repository is the list of all of the individual file patches to all the files changed between the last state of the repo and the current
+one.
+To understand patches more in depth, there is some interesting mathematics involved: you can view a simple introduction [here](https://pijul.org/manual/why_pijul.html).
+This resource also details why I git is not my favorite version control system.
+To be very clear you do not need to understand patch theory, just have an operating knowledge of what I have detailed above..
+
+### Branching
+This is what makes version control powerful, it allows for distributed changes to be made in order to ensure that multiple people can edit files at the same time.
+Git was one of the first to do this efficiently and well making it the most popular version control software to this date.
+But if we make these branches we want to reconcile these changes in a process called merging.
+The process to figure this out is hard.
+This is essentially the biggest use for branching.
+Here is a clean visualization courtesy of Atlassian.
+<img class="lozad" data-src="https://wac-cdn.atlassian.com/dam/jcr:83323200-3c57-4c29-9b7e-e67e98745427/Branch-1.png?cdnVersion=736" alt=""/>
+
+## What is git
