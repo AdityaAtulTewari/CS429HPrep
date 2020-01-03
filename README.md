@@ -103,6 +103,6 @@ But if we make these branches we want to reconcile these changes in a process ca
 The process to figure this out is hard.
 This is essentially the biggest use for branching.
 Here is a clean visualization courtesy of Atlassian.
-<img class="lozad" data-src="https://wac-cdn.atlassian.com/dam/jcr:83323200-3c57-4c29-9b7e-e67e98745427/Branch-1.png?cdnVersion=736" alt=""/> </img>
+![alt text](https://wac-cdn.atlassian.com/dam/jcr:83323200-3c57-4c29-9b7e-e67e98745427/Branch-1.png?cdnVersion=736)
 
 ## What is git
