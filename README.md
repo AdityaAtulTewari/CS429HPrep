@@ -134,5 +134,5 @@ The status command will allow us to view the current state of the branch.
 This forms a commit with the message in quotes.
 What this does is add a commit to the tree.
 This helpful visual describes the staging to commit process courtesy of Microsoft.
-![alt text](https://docs.microsoft.com/en-us/azure/devops/repos/git/_img/git_file_status_lifecycle.png?view=azure-devops)
 
+![alt text](https://docs.microsoft.com/en-us/azure/devops/repos/git/_img/git_file_status_lifecycle.png?view=azure-devops)
