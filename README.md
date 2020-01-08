@@ -94,7 +94,7 @@ Then a patch to the repository is the list of all of the individual file patches
 one.
 To understand patches more in depth, there is some interesting mathematics involved: you can view a simple introduction [here](https://pijul.org/manual/why_pijul.html).
 This resource also details why I git is not my favorite version control system.
-To be very clear you do not need to understand patch theory, just have an operating knowledge of what I have detailed above..
+To be very clear you do not need to understand patch theory, just have an operating knowledge of what I have detailed above.
 
 ### Branching
 This is what makes version control powerful, it allows for distributed changes to be made in order to ensure that multiple people can edit files at the same time.
@@ -106,3 +106,33 @@ Here is a clean visualization courtesy of Atlassian.
 ![alt text](https://wac-cdn.atlassian.com/dam/jcr:83323200-3c57-4c29-9b7e-e67e98745427/Branch-1.png?cdnVersion=736)
 
 ## What is git
+In the above image you may be wondering what a commit is.
+It is git's version of a patch.
+Git keeps track of changes to binary objects instead of files.
+This allows it a way to track things like file name changes, in a clean manner, but also increases the complexity of git's algorithms.
+Now that you have cloned this repository (gotten a copy of it on your own computer) we are going to make some changes,
+
+## Git tutorial
+There is a file called mult.c in the mult branch.
+A checkout is a method to grab some repositories object from somewhere and move it into a working environment.
+So let's checkout the mult branch and take a look.
+``` bash
+  git checkout mult
+```
+I've made a number of horrible mistakes in the mult.c file.
+See if you can find them and use vim to fix them.
+After you have fixed that, continue on to the next part.
+The next command will do what is called add that file to staging, meaning it will be commited on the next commit.
+``` bash
+  git add mult.c
+  git status
+```
+The status command will allow us to view the current state of the branch.
+``` bash
+  git commit -m "Fixed mult"
+```
+This forms a commit with the message in quotes.
+What this does is add a commit to the tree.
+This helpful visual describes the staging to commit process courtesy of Microsoft.
+![alt text](https://docs.microsoft.com/en-us/azure/devops/repos/git/_img/git_file_status_lifecycle.png?view=azure-devops)
+
