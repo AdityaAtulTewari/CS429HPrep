@@ -142,3 +142,42 @@ Test the code by running the below command, if it fails be sure to keep making e
   make mult
   ./mult
 ```
+Once you are finished make sure to commit that file to the mult branch.
+### Git Checkout
+Then we are going to discuss several different ways of moving the changes over to the master branch.
+In order to do this we first want to be on the master branch.
+This command should move you to the master branch:
+``` bash
+  git checkout master
+```
+To show you the different ways of doing this we will also explore ways to undo changes as well.
+These are techniques that you always, always look up the exact command before you execute.
+They are dangerous and you want to make sure you execute exactly what you want.
+
+The first method is checking out the file.
+It is a simple way of moving one file over.
+This is recommend for very small changes, as it does not create an actual commit and gives you flexibility to throw changes away.
+``` bash
+  git checkout mult -- mult.c
+```
+The more general version of this command is:
+``` bash
+  git checkout <branch> -- <paths>
+```
+Omitting the paths has the side effect of switching branches.
+Now it is just like you have editted the mult.c file to change it to what you want manually and you can commit it to the master branch like before.
+This method however does not track where the changes have come from.
+In order to undo this change before you have committed it do:
+``` bash
+  git checkout mult.c
+```
+If you already commited this change then we want to delete the last commit.
+``` bash
+  git reset --hard HEAD~1
+```
+Again do not use that command unless you are absolutely sure you typed it correctly.
+Small changes can do sad things.
+Reset commands in general set the state of your branch to some previous state and thus should be well researched before use.
+
+### Git Merge
+
