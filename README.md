@@ -6,7 +6,7 @@ Our goal is to download this repository and run everything in it.
 
 ### Windows
 You will want Bash on Windows.
-Then follow the steps for linux.
+Then follow the steps for Linux.
 [Link to Horid Resource](https://www.howtogeek.com/249966/how-to-install-and-use-the-linux-bash-shell-on-windows-10/?fbclid=IwAR2ltW-hzfWSqZbuTM7t4oi5NqVB_kPJ3rKvhN674vyIgw6TlgtqoDtU52A)
 
 ### Linux
@@ -53,8 +53,8 @@ Make sure to replace \<csid\> with your csid.
   source ~/.bash_profile
 ```
 
-chmod is a command that allows us to change the execution priveleges of the file, so we can execute the new script we have created.
-source is similar to relaoding the terminal, for the particular file specified.
+chmod is a command that allows us to change the execution privileges of the file, so we can execute the new script we have created.
+source is similar to reloading the terminal, for the particular file specified.
 
 Now just use
 ``` bash
@@ -122,7 +122,7 @@ So let's checkout the mult branch and take a look.
 I've made a number of horrible mistakes in the mult.c file.
 See if you can find them and use vim to fix them.
 After you have fixed that, continue on to the next part.
-The next command will do what is called add that file to staging, meaning it will be commited on the next commit.
+The next command will do what is called add that file to staging, meaning it will be committed on the next commit.
 ``` bash
   git add mult.c
   git status
@@ -165,13 +165,13 @@ The more general version of this command is:
   git checkout <branch> -- <paths>
 ```
 Omitting the paths has the side effect of switching branches.
-Now it is just like you have editted the mult.c file to change it to what you want manually and you can commit it to the master branch like before.
+Now it is just like you have edited the mult.c file to change it to what you want manually and you can commit it to the master branch like before.
 This method however does not track where the changes have come from.
 In order to undo this change before you have committed it do:
 ``` bash
   git checkout mult.c
 ```
-If you already commited this change then we want to delete the last commit.
+If you already committed this change then we want to delete the last commit.
 ``` bash
   git reset --hard HEAD~1
 ```
@@ -180,4 +180,54 @@ Small changes can do sad things.
 Reset commands in general set the state of your branch to some previous state and thus should be well researched before use.
 
 ### Git Merge
+For larger changes where we would like to combine the HEAD (the topmost commit) of two branches, we use a merge commit.
+They can be formulated in various ways.
+The best practice is to merge to the target branch" into the "working branch" and then merge the new "working branch" into the target branch.
+This allows you to incorporate changes that have been made to the target without disturbing changes other people could be making.
+This method also has the benefit of creating essentially a copy of the intended on the "working branch".
+Which can be further modified and then later re-merged to the target seamlessly.
+Merging has so many options and can become complicated very quickly if we loose sight of the basic tree structure of a repository.
+Let us remind ourselves of the earlier diagram:
 
+![alt text](https://wac-cdn.atlassian.com/dam/jcr:83323200-3c57-4c29-9b7e-e67e98745427/Branch-1.png?cdnVersion=736)
+
+In our example the common branch is master and the feature branch is mult.
+The above diagram is about what we want at the end result.
+But we will also create a merge commit on the mult branch.
+So checkout the mult branch.
+Then run the following.
+``` bash
+  git merge master
+```
+In some circumstances you will have a merge conflict, [here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/resolving-a-merge-conflict-using-the-command-line) is a good resource for managing those.
+You should not have one here.
+Now we want to view this commit by running:
+``` bash
+  git log
+```
+You should see some auto generated commit that specifies this is a merge commit.
+Whenever you want to quit just type the letter `q`.
+Reading through the git log is a very important skill, [this resource](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History) should help.
+Before we continue, ensure everything is in proper working order, and
+Now if we want to move that commit to the master branch, checkout the master branch and run.
+``` bash
+  git merge mult
+```
+Notice this is the mirror of the above merge command, because we are merging the "working branch" into the "target branch" now.
+So make sure that everything works and we can continue to the most interesting method to fix the changes.
+Obviously we should on both branches delete the commit with the reset command.
+Make sure you check the git log before running the command.
+This time however use the git log to find the last commit you want to reset to.
+``` bash
+  git reset --hard <commit-id>
+```
+Also to check the branch you are on run:
+``` bash
+  git branch
+```
+Thus it is reasonable to understand that HEAD~1 must represent some commit id, this commit id is the one before the current HEAD commit id.
+The obvious question here of course is: What is a commit id?
+It is a unique representation of the commit in that place as a number.
+
+### Git Cherry-Pick
+The true power of patches is I can apply them in any order I want if I am sufficiently bored.
