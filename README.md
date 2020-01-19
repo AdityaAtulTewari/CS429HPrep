@@ -237,3 +237,18 @@ That metric can be expounded upon by your own exploration.
 But to continue we want to apply the set of commits writing and fixing the mult.c file.
 In this case, a merge is most useful, so I have created another two branches for practicing this technique.
 One called `pow` and the other called `weirdstuff`.
+When on the `pow` branch you should see at the top of the file the imports are missing.
+They are included in some commit in the `weirdstuff` branch.
+Make sure to use:
+``` bash
+  git log -p
+```
+When viewing the log for `weirdstuff` in order to see the content of the commits.
+We want to cherry-pick this commit onto the master branch.
+We can do this by switching to the `pow` branch and running:
+``` bash
+  git cherry-pick <commit-id>
+```
+This will try and merge the changes from that commit in weirdstuff to pow.
+Make sure that you deal with the merge conflict.
+Then follow the directions in the `git status` command.
