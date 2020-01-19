@@ -252,3 +252,7 @@ We can do this by switching to the `pow` branch and running:
 This will try and merge the changes from that commit in weirdstuff to pow.
 Make sure that you deal with the merge conflict.
 Then follow the directions in the `git status` command.
+
+## CONGRATS
+If you got this far and were able to do everything congratulations you now know a little bit more about git.
+I suggest you start using it to manage all of your different projects, both cs related and not.
