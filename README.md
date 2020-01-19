@@ -230,4 +230,10 @@ The obvious question here of course is: What is a commit id?
 It is a unique representation of the commit in that place as a number.
 
 ### Git Cherry-Pick
-The true power of patches is I can apply them in any order I want if I am sufficiently bored.
+The true power of patches is I can apply them in any order I want if I am sufficiently motivated (bored).
+This allows me to recognize parts of things that I would like transfered from branch to branch.
+In order to use this tool effectively one must have at least one commit per major repository change.
+That metric can be expounded upon by your own exploration.
+But to continue we want to apply the set of commits writing and fixing the mult.c file.
+In this case, a merge is most useful, so I have created another two branches for practicing this technique.
+One called `pow` and the other called `weirdstuff`.
