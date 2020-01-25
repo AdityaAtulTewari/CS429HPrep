@@ -40,7 +40,7 @@ First let us create a directory for our scripts
 In your terminal (if on windows in WSL):
 ``` bash
   mkdir -p ~/scripts
-  echo 'export PATH="\$PATH:$HOME/scripts"' >> ~/.bash_profile
+  echo 'export PATH="$PATH:$HOME/scripts"' >> ~/.bash_profile
 ```
 Whenever you open a new terminal the bash profile is run in order to set up your terminal environment.
 So it will now add the scripts directory to our PATH, which will allow us to execute those files.
