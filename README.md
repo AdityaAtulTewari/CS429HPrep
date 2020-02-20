@@ -47,7 +47,7 @@ So it will now add the scripts directory to our PATH, which will allow us to exe
 
 Make sure to replace \<csid\> with your csid.
 ``` bash
-  echo "#!/bin/bash" > ~/scripts/sshut
+  echo '#!/bin/bash' > ~/scripts/sshut
   echo "ssh -i ~/.ssh/utlab <csid>@linux.cs.utexas.edu" >> ~/scripts/sshut
   chmod u+x ~/scripts/sshut
   source ~/.bash_profile
